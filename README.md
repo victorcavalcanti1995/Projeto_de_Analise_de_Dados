@@ -1,95 +1,89 @@
-Python Insights - Análise de Cancelamento de Clientes
+# Python Insights — Análise de Cancelamento de Clientes
 
-Sobre o Projeto
-Este projeto foi desenvolvido para uma empresa com mais de 800 mil clientes que estava enfrentando um alto índice de cancelamentos. O objetivo principal foi analisar os dados dos clientes para identificar os principais motivos que levam ao cancelamento do serviço e propor soluções eficientes para reduzir esse número.
+## Visão Geral
 
-Contexto
-A empresa percebeu que a maioria dos seus clientes são inativos (já cancelaram o serviço) e precisa entender:
-- Principais causas dos cancelamentos
-- Ações mais eficientes para reduzir a taxa de cancelamento
-- Padrões de comportamento dos clientes que cancelam
-
-Fonte de Dados
-Os dados utilizados neste projeto foram obtidos do Kaggle e estão disponíveis no [Google Drive](https://drive.google.com/drive/folders/1uDesZePdkhiraJmiyeZ-w5tfc8XsNYFZ?usp=drive_link).
-
-Tecnologias Utilizadas
-- **Python** (Linguagem principal)
-- **Pandas** (Manipulação e análise de dados)
-- **Plotly Express** (Visualização de dados)
-- **Jupyter Notebook** (Ambiente de desenvolvimento)
-
-Estrutura do Projeto
-
-Passo 1: Importação da Base de Dados
-```python
-import pandas as pd
-tabela = pd.read_csv('cancelamentos.csv')
-```
-
-Passo 2: Visualização Inicial dos Dados
-- Análise das informações disponíveis
-- Identificação de problemas na base
-- Remoção de colunas desnecessárias (CustomerID)
-
-Passo 3: Tratamento de Dados
-- Verificação de valores nulos
-- Limpeza dos dados inconsistentes
-- Preparação para análise
-
-Passo 4: Análise Exploratória
-- Identificação da taxa de cancelamento atual
-- Análise estatística inicial
-
-Passo 5: Análise Detalhada com Visualizações
-Utilização de gráficos interativos para cada coluna, segmentando por clientes que cancelaram ou não.
-
-Principais Descobertas
-
-Causas Críticas de Cancelamento:
-1. **Contrato Mensal**: 100% dos clientes com contrato mensal cancelaram
-2. **Ligações para o Call Center**: Clientes com mais de 4 ligações cancelaram
-3. **Atraso no Pagamento**: Atrasos superiores a 20 dias resultaram em cancelamento
-
-Soluções Propostas:
-
-| Problema | Solução | Ação |
-|----------|---------|------|
-| Contrato Mensal | Incentivar planos mais longos | Oferecer descontos em planos anual/quadrimestral |
-| Muitas ligações | Melhorar atendimento | Alerta vermelho com 3+ ligações |
-| Atraso no pagamento | Prevenir inadimplência | Alerta vermelho com 15+ dias de atraso |
-
-Resultados Obtidos
-
-Antes da Intervenção:
-- Taxa de cancelamento: **56,5%**
-
-Após as Medidas Corretivas:
-- Taxa de cancelamento: **18,4%**
-
-**Redução de 38,1 pontos percentuais na taxa de cancelamento!**
-
-Principais Insights
-
-1. **Segmentação de Contratos**: Clientes em contratos mensais são mais propensos a cancelar
-2. **Atendimento ao Cliente**: Qualidade do suporte influencia diretamente na retenção
-3. **Gestão de Inadimplência**: Atrasos prolongados são fortes preditores de cancelamento
-
-Como Executar o Projeto
-
-1. Clone este repositório
-2. Instale as dependências:
-   ```bash
-   pip install pandas plotly
-   ```
-3. Baixe a base de dados do [Google Drive](https://drive.google.com/drive/folders/1uDesZePdkhiraJmiyeZ-w5tfc8XsNYFZ?usp=drive_link)
-4. Execute o notebook Jupyter
-
-📝 Recomendações Finais
-
-- Implementar sistema de alertas preventivos
-- Criar programa de fidelidade para contratos longos
-- Investir em treinamento da equipe de suporte
-- Estabelecer políticas de cobrança mais eficientes
+Este projeto apresenta uma análise exploratória de dados completa com o objetivo de identificar os principais fatores de cancelamento (churn) em uma empresa com mais de 800.000 clientes. O foco foi transformar dados brutos em recomendações estratégicas acionáveis capazes de reduzir o churn e melhorar a retenção de clientes.
 
 ---
-**Nota**: Este projeto demonstra como a análise de dados pode gerar insights valiosos para tomada de decisão e redução de custos com cancelamentos.
+
+## Contexto de Negócio
+
+A empresa identificou um alto número de clientes inativos e precisava responder três questões principais:
+
+• Quais fatores estão mais associados ao cancelamento?
+• Quais ações podem reduzir o churn de forma efetiva?
+• Qual o impacto estimado dessas ações?
+
+---
+
+## Metodologia
+
+1. Ingestão de dados com Pandas
+2. Limpeza e validação da base
+3. Análise Exploratória de Dados (EDA)
+4. Visualização das variáveis com Plotly
+5. Identificação de padrões de churn
+6. Simulação de cenários para estimar impacto de mudanças operacionais
+
+A base utilizada é pública, originalmente disponibilizada no Kaggle, em formato CSV.
+
+---
+
+## Principais Descobertas
+
+Três variáveis apresentaram forte correlação com cancelamento:
+
+1. Clientes com contrato mensal apresentaram maior taxa de churn.
+2. Clientes com mais de quatro ligações ao suporte tiveram probabilidade elevada de cancelamento.
+3. Clientes com atraso superior a vinte dias no pagamento quase sempre cancelaram o serviço.
+
+---
+
+## Recomendações de Negócio
+
+• Incentivar contratos anuais ou de longo prazo por meio de estratégia de preços.
+• Implementar alerta operacional após três ligações ao suporte.
+• Criar notificações preventivas antes de quinze dias de atraso no pagamento.
+
+---
+
+## Simulação de Impacto
+
+Após filtrar clientes afetados pelos três principais fatores, a taxa de cancelamento caiu de **56% para 18%**, indicando alto potencial de impacto com melhorias direcionadas.
+
+---
+
+## Tecnologias Utilizadas
+
+• Python
+• Pandas
+• Plotly
+• Jupyter Notebook
+
+Conceitos aplicados: Limpeza de Dados, Análise Exploratória de Dados, Visualização de Dados, Analytics para Negócios.
+
+---
+
+## Estrutura do Repositório
+
+```
+project/
+ ├── cancelamentos.csv
+ ├── analysis.ipynb
+ └── README.md
+```
+
+---
+
+## Possíveis Evoluções
+
+• Modelo preditivo de churn com Machine Learning
+• Pipeline automatizado de dados
+• Dashboard interativo com Streamlit ou ferramentas de BI
+• Testes A/B para estratégias de retenção
+
+---
+
+## Autor
+
+Victor Cavalcanti
